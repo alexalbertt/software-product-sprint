@@ -26,10 +26,12 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
-function showQuote() {
-    const responseFromServer = await fetch('/quote');
-    const textFromResponse = await responseFromServer.text();
+async function showQuote() {
+  const responseFromServer = await fetch('/quote');
 
-    const dateContainer = document.getElementById('quote');
-    dateContainer.innerText = textFromResponse;
+  const quotes = await responseFromServer.json();
+
+  const quote = quotes[Math.floor(Math.random(3))];
+  const quoteContainer = document.getElementById('quote-container');
+  quoteContainer.innerText = quote;
 }
