@@ -1,9 +1,31 @@
+body {
+background-color: #CEEAF7;   
+}
+
+a {
+    text-decoration: none;
+}
+
 #content {
   margin-left: auto;
   margin-right: auto;
   width: 650px;
 }
 
+#header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#links {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+
 #greeting-container {
   margin-top: 20px;
 }
+
+
