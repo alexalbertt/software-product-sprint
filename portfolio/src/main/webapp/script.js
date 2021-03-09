@@ -30,8 +30,9 @@ async function showQuote() {
   const responseFromServer = await fetch('/quote');
 
   const quotes = await responseFromServer.json();
-
-  const quote = quotes[Math.floor(Math.random(3))];
+  console.log(quotes);
+  const index = Math.floor(Math.random()*3);
+  const quote = quotes[index];
   const quoteContainer = document.getElementById('quote-container');
   quoteContainer.innerText = quote;
 }

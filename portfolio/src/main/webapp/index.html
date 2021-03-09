@@ -2,14 +2,14 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <title>Alex Albert's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
   <body>
     <div id="content">
         <div id="header">
-            <img src="/images/profilePic.jpg" width="120"/>
+            <img src="/images/profilePic.jpg" id="profile-pic"/>
             <h1>Alex Albert</h1>
             <div id="links">
                 <a href="https://www.github.com/alexalbertt">GitHub</a>
@@ -35,12 +35,18 @@
                 <a href="https://docs.google.com/document/d/1lP8j60_GRirk5aH6nzSGmatRq07in8FnMMFvkMCnqwc/edit?usp=sharing" target="_blank" id="resume-link">Download Resume</a>
             </div>
             <div id="quote-content">
-                <button onclick="showQuote();">
-                Get Quote
+                <button class="btn third" onclick="showQuote();">
+                Get McConaughey Quote
                 </button>
                 <p id="quote-container"></p>
             </div>
         </div>
     </div>
+    <form action="/form-handler" method="POST">
+        <input name="name" id="name" type="text" placeholder="Name">
+		<input name="email" id="email" type="text" placeholder="Email">
+		<textarea name="message" id="message" type="text" placeholder="Message"></textarea>
+        <input id="submit" type="submit" value="Send!">
+    </form>
   </body>
 </html>
