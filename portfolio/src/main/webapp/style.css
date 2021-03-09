@@ -16,6 +16,12 @@ a:hover {
     text-decoration: underline;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #content {
   margin-left: auto;
   margin-right: auto;

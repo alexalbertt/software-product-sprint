@@ -43,10 +43,10 @@
         </div>
     </div>
     <form action="/form-handler" method="POST">
-        <p>Enter some text here:</p>
-        <textarea name="text-input">hello world</textarea>
-        <br/>
-        <input type="submit" />
+        <input name="name" id="name" type="text" placeholder="Name">
+		<input name="email" id="email" type="text" placeholder="Email">
+		<textarea name="message" id="message" type="text" placeholder="Message"></textarea>
+        <input id="submit" type="submit" value="Send!">
     </form>
   </body>
 </html>
