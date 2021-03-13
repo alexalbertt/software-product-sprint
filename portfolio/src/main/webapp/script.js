@@ -12,29 +12,55 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-google.charts.load('current', {'packages':['corechart']});
+google.charts.load("current", {'packages':["calendar"]});
 google.charts.setOnLoadCallback(drawChart);
 
 /** Creates a chart and adds it to the page. */
 function drawChart() {
-  const data = new google.visualization.DataTable();
-  data.addColumn('string', 'Animal');
-  data.addColumn('number', 'Count');
-        data.addRows([
-          ['Lions', 10],
-          ['Tigers', 5],
-          ['Bears', 15]
+  var dataTable = new google.visualization.DataTable();
+       dataTable.addColumn({ type: 'date', id: 'Date' });
+       dataTable.addColumn({ type: 'number', id: 'Hours' });
+       dataTable.addRows([
+          [ new Date(2021, 1, 2), 6.5 ],
+          [ new Date(2021, 1, 3), 6.5 ],
+          [ new Date(2021, 1, 4), 7.5 ],
+          [ new Date(2021, 1, 5), 8 ],
+          [ new Date(2021, 1, 6), 8.5 ],
+          [ new Date(2021, 1, 7), 7.5 ],
+          [ new Date(2021, 1, 8), 7 ],
+          [ new Date(2021, 1, 9), 7.5 ],
+          [ new Date(2021, 1, 10), 7 ],
+          [ new Date(2021, 1, 11), 7.5 ],
+          [ new Date(2021, 1, 12), 7 ],
+          [ new Date(2021, 1, 13), 8 ],
+          [ new Date(2021, 1, 14), 8 ],
+          [ new Date(2021, 1, 15), 8 ],
+          [ new Date(2021, 1, 16), 8 ],
+          [ new Date(2021, 1, 17), 8 ],
+          [ new Date(2021, 1, 18), 8 ],
+          [ new Date(2021, 1, 19), 8 ],
+          [ new Date(2021, 1, 20), 8 ],
+          [ new Date(2021, 1, 21), 8 ],
+          [ new Date(2021, 1, 22), 8 ],
+          [ new Date(2021, 1, 23), 8 ],
+          [ new Date(2021, 1, 24), 8 ],
+          [ new Date(2021, 1, 25), 8 ],
+          [ new Date(2021, 1, 26), 8 ],
+          [ new Date(2021, 1, 27), 8 ],
+          [ new Date(2021, 1, 28), 8 ],
+          [ new Date(2021, 1, 29), 8 ],
+          [ new Date(2021, 1, 30), 8 ],
+          [ new Date(2021, 1, 31), 8 ],
         ]);
 
-  const options = {
-    'title': 'Zoo Animals',
-    'width':500,
-    'height':400
-  };
+       var chart = new google.visualization.Calendar(document.getElementById('calendar_basic'));
 
-  const chart = new google.visualization.PieChart(
-      document.getElementById('chart-container'));
-  chart.draw(data, options);
+       var options = {
+         title: "Hours of Sleep Per Night",
+         height: 350,
+       };
+
+       chart.draw(dataTable, options);
 }
 
 /**
